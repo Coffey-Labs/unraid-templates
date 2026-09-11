@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+  <Name>ihasmail</Name>
+  <Repository>ghcr.io/coffey-labs/ihasmail:latest</Repository>
+  <Registry>https://github.com/Coffey-Labs/ihasmail/pkgs/container/ihasmail</Registry>
+  <Network>bridge</Network>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/Coffey-Labs/ihasmail/issues</Support>
+  <Project>https://github.com/Coffey-Labs/ihasmail</Project>
+  <ReadMe>https://raw.githubusercontent.com/Coffey-Labs/ihasmail/main/README.md</ReadMe>
+  <Overview>Immutable webmail for Stalwart Mail Server. Mail, calendars, contacts, files and filters in one responsive app that works as well on a phone as on a desktop, talking only JMAP to a Stalwart you already run. There is no database, no IMAP or SMTP configuration and nothing to migrate between versions: everything durable stays in Stalwart, and the container is disposable. The root filesystem runs read-only; the only optional write is a session file, kept so that nobody is signed out when the container restarts. Try it first at https://demo.ihasmail.com and read the docs at https://docs.ihasmail.org.</Overview>
+  <Category>Productivity: Network:Web Network:Messenger</Category>
+  <WebUI>http://[IP]:[PORT:8080]</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/Coffey-Labs/unraid-templates/main/templates/ihasmail.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/Coffey-Labs/unraid-templates/main/templates/ihasmail.png</Icon>
+  <ExtraParams>--read-only --tmpfs /tmp --user 99:100</ExtraParams>
+  <ExtraSearchTerms>webmail email mail stalwart jmap calendar contacts immutable</ExtraSearchTerms>
+  <Requires>A Stalwart Mail Server 0.16 or newer that this container can reach over the network. ihasmail is a mail client, not a mail server: it holds no mail, no accounts and no database of its own. Put it behind a reverse proxy with HTTPS before exposing it beyond your LAN.</Requires>
+  <License>AGPL-3.0-or-later</License>
+  <MinVer>6.10.0</MinVer>
+  <Date>2026-09-10</Date>
+  <Changes>
+### 2026-09-10
+- First template. Runs the published multi-arch image read-only, as Unraid's nobody user, with an optional appdata path for the session file.
+  </Changes>
+  <Screenshot>https://ihasmail.org/img/inbox-light.jpg</Screenshot>
+  <Screenshot>https://ihasmail.org/img/inbox-dark.jpg</Screenshot>
+  <Screenshot>https://ihasmail.org/img/compose.jpg</Screenshot>
+  <Screenshot>https://ihasmail.org/img/calendar.jpg</Screenshot>
+  <Screenshot>https://ihasmail.org/img/contacts.jpg</Screenshot>
+  <Screenshot>https://ihasmail.org/img/files.jpg</Screenshot>
+  <Screenshot>https://ihasmail.org/img/mobile.jpg</Screenshot>
+  <Config Name="WebUI port" Target="8080" Default="8080" Mode="tcp" Description="The port ihasmail answers on. Point a reverse proxy at it, or open it directly on your LAN." Type="Port" Display="always" Required="true" Mask="false">8080</Config>
+  <Config Name="Stalwart URL" Target="STALWART_URL" Default="https://mail.example.com" Mode="" Description="Scheme and host of your Stalwart Mail Server, with no path: the JMAP session is discovered at /.well-known/jmap under it. Only this container talks to Stalwart; browsers never do." Type="Variable" Display="always" Required="true" Mask="false">https://mail.example.com</Config>
+  <Config Name="App secret" Target="APP_SECRET" Default="" Mode="" Description="A long random string the session keys are derived from. Generate one in the Unraid terminal with: openssl rand -base64 48. Changing it signs everyone out." Type="Variable" Display="always" Required="true" Mask="true"></Config>
+  <Config Name="Session file folder" Target="/data" Default="/mnt/user/appdata/ihasmail" Mode="rw" Description="Optional, and the only thing ihasmail ever writes: sessions.json, so that nobody is signed out when the container restarts or updates. To run with no writable path at all, clear this, set Session file to empty and Immutable to 1." Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/ihasmail</Config>
+  <Config Name="Session file" Target="SESSION_FILE" Default="/data/sessions.json" Mode="" Description="Where sessions are persisted, inside the container. Leave empty to hold sessions in memory only, which signs everyone out on every restart." Type="Variable" Display="advanced" Required="false" Mask="false">/data/sessions.json</Config>
+  <Config Name="Immutable" Target="IMMUTABLE" Default="0" Mode="" Description="Set to 1 to have the server refuse to start unless it really has a read-only filesystem and no session file. An assertion, not a switch: it changes nothing except what a misconfiguration does." Type="Variable" Display="advanced" Required="false" Mask="false">0</Config>
+  <Config Name="App name" Target="APP_NAME" Default="ihasmail" Mode="" Description="Branding shown in the UI and by the health endpoint." Type="Variable" Display="advanced" Required="false" Mask="false">ihasmail</Config>
+  <Config Name="Image proxy" Target="IMAGE_PROXY" Default="1" Mode="" Description="1 routes remote images in messages through ihasmail so senders never see your address. 0 loads them straight from the sender's server." Type="Variable" Display="advanced" Required="false" Mask="false">1</Config>
+  <Config Name="Secure cookies" Target="SECURE_COOKIES" Default="auto" Mode="" Description="auto marks the session cookie Secure when the request arrived over HTTPS, which is what a reverse proxy gives you. 1 or 0 forces it either way." Type="Variable" Display="advanced" Required="false" Mask="false">auto</Config>
+</Container>
