@@ -6,7 +6,7 @@ Community Applications reads for the repository listing.
 
 | App | Template | Image | Licence of the app |
 | --- | --- | --- | --- |
-| [ihasmail](https://ihasmail.org) — immutable webmail for Stalwart Mail Server | [`templates/ihasmail.xml`](templates/ihasmail.xml) | `ghcr.io/coffey-labs/ihasmail:latest` (amd64, arm64) | AGPL-3.0-or-later |
+| [ihasmail](https://ihasmail.org) — immutable webmail for Stalwart Mail Server | [`templates/ihasmail.xml`](templates/ihasmail.xml) | `registry.coffeylabs.org/coffey-labs/ihasmail:latest` (amd64, arm64) | AGPL-3.0-or-later |
 
 ## Installing
 
@@ -19,7 +19,7 @@ in the **Template** drop-down of **Docker → Add Container**:
 
 ```sh
 wget -P /boot/config/plugins/dockerMan/templates-user/ \
-  https://raw.githubusercontent.com/Coffey-Labs/unraid-templates/main/templates/ihasmail.xml
+  https://git.coffeylabs.org/coffey-labs/unraid-templates/-/raw/main/templates/ihasmail.xml
 ```
 
 ## ihasmail
@@ -47,7 +47,7 @@ Every other setting is documented at
 [docs.ihasmail.org/configure](https://docs.ihasmail.org/configure/).
 
 Problems with the app go to
-[Coffey-Labs/ihasmail issues](https://github.com/Coffey-Labs/ihasmail/issues);
+[coffey-labs/ihasmail issues](https://git.coffeylabs.org/coffey-labs/ihasmail/-/work_items);
 problems with the template go to the issues on this repository.
 
 ## Licence
