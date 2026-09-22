@@ -19,7 +19,7 @@ in the **Template** drop-down of **Docker → Add Container**:
 
 ```sh
 wget -P /boot/config/plugins/dockerMan/templates-user/ \
-  https://git.coffeylabs.org/coffey-labs/unraid-templates/-/raw/main/templates/ihasmail.xml
+  https://git.coffeylabs.org/coffey-labs/unraid-templates/raw/branch/main/templates/ihasmail.xml
 ```
 
 ## ihasmail
@@ -47,7 +47,7 @@ Every other setting is documented at
 [docs.ihasmail.org/configure](https://docs.ihasmail.org/configure/).
 
 Problems with the app go to
-[coffey-labs/ihasmail issues](https://git.coffeylabs.org/coffey-labs/ihasmail/-/work_items);
+[coffey-labs/ihasmail issues](https://git.coffeylabs.org/coffey-labs/ihasmail/issues);
 problems with the template go to the issues on this repository.
 
 ## Licence

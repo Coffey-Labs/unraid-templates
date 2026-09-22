@@ -2,18 +2,18 @@
 <Container version="2">
   <Name>ihasmail</Name>
   <Repository>registry.coffeylabs.org/coffey-labs/ihasmail:latest</Repository>
-  <Registry>https://git.coffeylabs.org/coffey-labs/ihasmail/container_registry</Registry>
+  <Registry>https://git.coffeylabs.org/coffey-labs/-/packages/container/ihasmail</Registry>
   <Network>bridge</Network>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
-  <Support>https://git.coffeylabs.org/coffey-labs/ihasmail/-/work_items</Support>
+  <Support>https://git.coffeylabs.org/coffey-labs/ihasmail/issues</Support>
   <Project>https://git.coffeylabs.org/coffey-labs/ihasmail</Project>
-  <ReadMe>https://git.coffeylabs.org/coffey-labs/ihasmail/-/raw/main/README.md</ReadMe>
+  <ReadMe>https://git.coffeylabs.org/coffey-labs/ihasmail/raw/branch/main/README.md</ReadMe>
   <Overview>Immutable webmail for Stalwart Mail Server. Mail, calendars, contacts, files and filters in one responsive app that works as well on a phone as on a desktop, talking only JMAP to a Stalwart you already run. There is no database, no IMAP or SMTP configuration and nothing to migrate between versions: everything durable stays in Stalwart, and the container is disposable. The root filesystem runs read-only; the only optional write is a session file, kept so that nobody is signed out when the container restarts. Try it first at https://demo.ihasmail.com and read the docs at https://docs.ihasmail.org.</Overview>
   <Category>Productivity: Network:Web Network:Messenger</Category>
   <WebUI>http://[IP]:[PORT:8080]</WebUI>
-  <TemplateURL>https://git.coffeylabs.org/coffey-labs/unraid-templates/-/raw/main/templates/ihasmail.xml</TemplateURL>
-  <Icon>https://git.coffeylabs.org/coffey-labs/unraid-templates/-/raw/main/templates/ihasmail.png</Icon>
+  <TemplateURL>https://git.coffeylabs.org/coffey-labs/unraid-templates/raw/branch/main/templates/ihasmail.xml</TemplateURL>
+  <Icon>https://git.coffeylabs.org/coffey-labs/unraid-templates/raw/branch/main/templates/ihasmail.png</Icon>
   <ExtraParams>--read-only --tmpfs /tmp --user 99:100</ExtraParams>
   <ExtraSearchTerms>webmail email mail stalwart jmap calendar contacts immutable</ExtraSearchTerms>
   <Requires>A Stalwart Mail Server 0.16 or newer that this container can reach over the network. ihasmail is a mail client, not a mail server: it holds no mail, no accounts and no database of its own. Put it behind a reverse proxy with HTTPS before exposing it beyond your LAN.</Requires>
