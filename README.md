@@ -1,5 +1,9 @@
 # Coffey Labs Unraid templates
 
+> [!NOTE]
+> Development happens on [git.coffeylabs.org/coffey-labs/unraid-templates](https://git.coffeylabs.org/coffey-labs/unraid-templates); the copy on GitHub is a read-only mirror.
+> Report issues at **[git.coffeylabs.org/coffey-labs/unraid-templates/issues](https://git.coffeylabs.org/coffey-labs/unraid-templates/issues)**, and join discussions at **[community.coffeylabs.org](https://community.coffeylabs.org)**.
+
 Docker templates for [Unraid Community Applications](https://ca.unraid.net),
 one XML file per app under `templates/`. `ca_profile.xml` at the root is what
 Community Applications reads for the repository listing.
