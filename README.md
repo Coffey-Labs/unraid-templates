@@ -8,9 +8,9 @@ Docker templates for [Unraid Community Applications](https://ca.unraid.net),
 one XML file per app under `templates/`. `ca_profile.xml` at the root is what
 Community Applications reads for the repository listing.
 
-| App | Template | Image | Licence of the app |
+| App | Template | Image | License of the app |
 | --- | --- | --- | --- |
-| [ihasmail](https://ihasmail.org) — immutable webmail for Stalwart Mail Server | [`templates/ihasmail.xml`](templates/ihasmail.xml) | `registry.coffeylabs.org/coffey-labs/ihasmail:latest` (amd64, arm64) | AGPL-3.0-or-later |
+| [ihasmail](https://ihasmail.org) — immutable webmail for Stalwart Mail Server | [`templates/ihasmail.xml`](templates/ihasmail.xml) | `ghcr.io/coffey-labs/ihasmail:latest` (amd64, arm64) | AGPL-3.0-or-later |
 
 ## Installing
 
@@ -23,7 +23,7 @@ in the **Template** drop-down of **Docker → Add Container**:
 
 ```sh
 wget -P /boot/config/plugins/dockerMan/templates-user/ \
-  https://git.coffeylabs.org/coffey-labs/unraid-templates/raw/branch/main/templates/ihasmail.xml
+  https://raw.githubusercontent.com/Coffey-Labs/unraid-templates/main/templates/ihasmail.xml
 ```
 
 ## ihasmail
@@ -54,7 +54,7 @@ Problems with the app go to
 [coffey-labs/ihasmail issues](https://git.coffeylabs.org/coffey-labs/ihasmail/issues);
 problems with the template go to the issues on this repository.
 
-## Licence
+## License
 
 The templates in this repository are MIT licensed. Each app keeps its own
-licence, shown in the table above.
+license, shown in the table above.
