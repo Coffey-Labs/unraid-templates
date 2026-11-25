@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CommunityApplications>
-  <Profile>Templates for the self-hosted software Coffey Labs publishes. Today that is ihasmail, an immutable webmail client for Stalwart Mail Server. Support for each app goes through its own GitHub issues, linked from the template.</Profile>
-  <Icon>https://git.coffeylabs.org/coffey-labs/unraid-templates/raw/branch/main/icon.png</Icon>
+  <Profile>Templates for the self-hosted software Coffey Labs publishes. Today that is ihasmail, an immutable webmail client for Stalwart Mail Server. Support for each app goes through its own issue tracker, linked from the template, and the Coffey Labs community forum.</Profile>
+  <Icon>https://raw.githubusercontent.com/Coffey-Labs/unraid-templates/main/icon.png</Icon>
+  <Forum>https://community.coffeylabs.org</Forum>
   <WebPage>https://coffeylabs.org</WebPage>
 </CommunityApplications>
